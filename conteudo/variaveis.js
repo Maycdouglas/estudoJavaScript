@@ -28,3 +28,20 @@ let variavel = "Palavra" //inicializa a variavel como tipo String
 console.log(typeof variavel)
 variavel = 24 //muda o tipo da variavel para Number
 console.log(typeof variavel)
+
+// ============================================================ //
+
+//agrupamento de declarações
+let age, name
+
+//assignment ou atribuição de valores
+age = 21
+nome = "Maycon"
+
+console.log(age,nome)
+
+//concatenando os valores
+console.log('O ' + nome + ' tem ' + age + ' anos.')
+
+//interpolando valores
+console.log(`O ${nome} tem ${age} anos.`)
