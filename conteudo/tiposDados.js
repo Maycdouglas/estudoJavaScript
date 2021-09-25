@@ -107,6 +107,20 @@ console.log([
     true
 ])
 
+
+//criando um array
+const animals = [
+    'Lion',
+    'Monkey',
+    'Dog'
+]
+
+//acessar os valores dentro do Array
+console.log(animals[0])
+
+//tamanho do array
+console.log(animals.length)
+
 // ============================================================ //
 
 /*
