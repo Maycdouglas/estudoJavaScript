@@ -77,6 +77,20 @@ console.log({
     }
 })
 
+
+//criando um objeto
+const person = {
+    name: "Maycon",
+    age: 21,
+    weight: 75.0,
+    isAdmin: true
+}
+
+console.log(person.name)
+console.log(person.age)
+console.log(person.weight)
+console.log(person.isAdmin)
+
 // ============================================================ //
 
 /*
