@@ -66,3 +66,19 @@ function Person(name) {
 }
 const maycon = new Person("Maycon")
 console.log(maycon.walk())
+
+//FUNÇÃO BIND
+
+const pessoa = {
+    saudacao: 'Bom dia',
+    falar() {
+        console.log(this.saudacao)
+    }
+}
+
+pessoa.falar()
+const falar = pessoa.falar
+falar() //conflito entre paradigmas: funcional e OO
+
+const falarDePessoa = pessoa.falar.bind(pessoa) //o bind serve para que a função consiga referenciar o this ao objeto que queremos
+falarDePessoa()
