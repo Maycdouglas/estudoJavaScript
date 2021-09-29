@@ -4,4 +4,3 @@
 
 */
 
-// Operador Destructuring em Função

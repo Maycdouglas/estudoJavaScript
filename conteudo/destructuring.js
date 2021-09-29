@@ -33,3 +33,15 @@ console.log(n1,n3,n5,n6)
 //o exemplo a seguir é de dificil leitura, por isso não é muito recomendado
 const [, [ , nota]] = [[,8,8], [9,6,8]] //vai pegar o 6, que é o segundo elemento do segundo array
 console.log(nota)
+
+
+// Operador Destructuring na Função
+
+function rand({ min = 0, max = 1000}) { //se a funcao nao receber parametros ao ser chamada, vai assumir estes valores
+    const valor = Math.random() * (max - min) + min
+    return Math.floor(valor) //essa funcao floor retorna o menor numero inteiro anterior ao parametro
+}
+
+const obj = { max: 50, min: 40 }
+console.log(rand(obj))
+console.log(rand({min: 955}))
