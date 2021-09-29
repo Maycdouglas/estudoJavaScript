@@ -82,3 +82,17 @@ falar() //conflito entre paradigmas: funcional e OO
 
 const falarDePessoa = pessoa.falar.bind(pessoa) //o bind serve para que a função consiga referenciar o this ao objeto que queremos
 falarDePessoa()
+
+//Mais um exemplo com o bind e uma solução alternativa
+//A função setInterval gera um intervalo de execucao da funcao enviada como parametro
+function Pessoa() {
+    this.idade = 0
+
+    const self = this
+    setInterval(function() { 
+        self.idade++
+        console.log(self.idade)
+    }/*.bind(this)*/, 1000)
+}
+
+new Pessoa
