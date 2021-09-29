@@ -4,6 +4,4 @@
 
 */
 
-
-
-
+// Operador Destructuring em Array
