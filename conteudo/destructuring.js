@@ -35,7 +35,7 @@ const [, [ , nota]] = [[,8,8], [9,6,8]] //vai pegar o 6, que é o segundo elemen
 console.log(nota)
 
 
-// Operador Destructuring na Função
+// Operador Destructuring na Função com Objeto
 
 function rand({ min = 0, max = 1000}) { //se a funcao nao receber parametros ao ser chamada, vai assumir estes valores
     const valor = Math.random() * (max - min) + min
@@ -45,3 +45,15 @@ function rand({ min = 0, max = 1000}) { //se a funcao nao receber parametros ao 
 const obj = { max: 50, min: 40 }
 console.log(rand(obj))
 console.log(rand({min: 955}))
+
+// Operador Destructuring na Função com Objeto
+
+function rand2([min = 0, max = 1000]) {
+    if (min > max) [min, max] = [max, min] // aqui inverte os valores usando o operador destructuring
+    const valor = Math.random() * (max - min) + min
+    return Math.floor(valor) 
+}
+
+console.log(rand2([50, 40]))
+console.log(rand2([992]))
+console.log(rand2([ , 10]))
