@@ -36,6 +36,9 @@ const sayMyName = (name) => {
 }
 
 sayMyName('Maycon')
+const a = 2
+let dobro = a => 2 * a //dessa forma o que vem depois da seta é o retorno da arrow function
+console.log(dobro(a))
 
 //callback function
 function digaMeuNome(nome) {
