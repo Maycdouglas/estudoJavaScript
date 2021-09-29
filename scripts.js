@@ -4,4 +4,4 @@
 
 */
 
-// Operador Destructuring em Array
+// Operador Destructuring em Função
