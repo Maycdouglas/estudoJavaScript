@@ -99,3 +99,17 @@ function Pessoa() {
 }
 
 new Pessoa
+
+
+//Função ForEach
+//nessa função o indice do array será sempre o segundo parametro, o terceiro parametro é o proprio array e o primeiro parametro é o conteudo do array naquela posicao
+const aprovados = ['Ana', 'Bia', 'Manoel', "Zoo", 'Pedro']
+
+aprovados.forEach(function(nome, indice) {
+    console.log(`${indice + 1}) ${nome}`)
+})
+
+aprovados.forEach(nome => console.log(nome))
+
+const exibirAprovados = aprovado => console.log(aprovado)
+aprovados.forEach(exibirAprovados)
