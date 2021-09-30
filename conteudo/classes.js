@@ -38,3 +38,27 @@ const contas = new CicloFinanceiro(6, 2018)
 
 contas.addLancamentos(salario,contaDeLuz)
 console.log(contas.sumario())
+
+//Exemplo de classes com herenças
+
+class Avo {
+    constructor(sobrenome) {
+        this.sobrenome = sobrenome
+    }
+}
+
+class Pai extends Avo {
+    constructor(sobrenome, profissao = 'Professor') {
+        super(sobrenome)
+        this.profissao = profissao
+    }
+}
+
+class Filho extends Pai {
+    constructor() {
+        super('Silva')
+    }
+}
+
+const filho = new Filho
+console.log(filho)
