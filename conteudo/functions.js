@@ -126,3 +126,33 @@ const aprovados = ['Ana', 'Bia', 'Manoel', "Zoo", 'Pedro']
 aprovados.forEach2(function(nome, indice) {
     console.log(`${indice + 1}) ${nome}`)
 })
+
+
+//Função Map
+//gera um novo array!
+// a função callback pode receber três parametros: 1)valor atual, 2)indice, 3)o próprio array
+
+const nums = [1, 2, 3, 4, 5]
+
+let resultado = nums.map(function(e) {
+    return e * 2
+})
+
+console.log(resultado)
+
+//exemplo com json
+const carrinho = [
+    '{ "nome": "Borracha", "preco": 3.45 }',
+    '{ "nome": "Caderno", "preco": 13.90 }',
+    '{ "nome": "Kit de Lapis", "preco": 41.22 }',
+    '{ "nome": "Caneta", "preco": 7.50 }'
+
+]
+
+//retornar um array apenas com os preços
+
+const paraObjeto = json => JSON.parse(json) //transforma as strings em objetos
+const apenasPreco = produto => produto.preco
+
+const resultado2 = carrinho.map(paraObjeto).map(apenasPreco)
+console.log(resultado2)
