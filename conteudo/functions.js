@@ -187,3 +187,10 @@ const resultado = alunos.map(a => a.nota).reduce(function(acumulador, atual) {
 })
 
 console.log(resultado)
+
+//Função concat
+
+const filhas = ["Maisa", "Joaquina"]
+const filhos = ["João", "Pedro"]
+const todos = filhas.concat(filhos,"Posso passar quantos parametros eu quiser")
+console.log(todos, filhas, filhos)
