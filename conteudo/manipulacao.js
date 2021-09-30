@@ -84,3 +84,17 @@ console.log(index)
 
 
 console.log(techs)
+
+//Forma não muito recomendada para criar array
+let aprovados = new Array('Bia', 'Carlos', 'Ana')
+
+//Forma recomendada
+aprovados = ['Bia', 'Carlos', 'Ana']
+console.log(aprovados)
+aprovados.sort() //ordena os elementos do array, altera o array original
+console.log(aprovados)
+
+delete aprovados[1] //dessa forma exclui o elemento e o seta como undefined naquela posição
+// dessa forma a função vai inserir esses elementos a partir da posição 1 e exclui quantos elementos forem dados no segundo parametro
+aprovados.splice(1, 0, 'Elemento1', 'Elemento2')
+console.log(aprovados)
