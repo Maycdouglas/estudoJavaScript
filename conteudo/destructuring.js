@@ -23,18 +23,6 @@ console.log(sobrenome, bemHumorada)
 const { endereco: { logradouro, numero, cep } } = pessoa
 console.log(logradouro,numero,cep)
 
-// Operador Destructuring em Array
-const [a] = [10]
-console.log[a]
-
-const [n1, , n3, , n5, n6 = 0] = [10, 7, 9, 8] //vai pular o 7 e o 8
-console.log(n1,n3,n5,n6)
-
-//o exemplo a seguir é de dificil leitura, por isso não é muito recomendado
-const [, [ , nota]] = [[,8,8], [9,6,8]] //vai pegar o 6, que é o segundo elemento do segundo array
-console.log(nota)
-
-
 // Operador Destructuring na Função com Objeto
 
 function rand({ min = 0, max = 1000}) { //se a funcao nao receber parametros ao ser chamada, vai assumir estes valores
@@ -46,14 +34,3 @@ const obj = { max: 50, min: 40 }
 console.log(rand(obj))
 console.log(rand({min: 955}))
 
-// Operador Destructuring na Função com Objeto
-
-function rand2([min = 0, max = 1000]) {
-    if (min > max) [min, max] = [max, min] // aqui inverte os valores usando o operador destructuring
-    const valor = Math.random() * (max - min) + min
-    return Math.floor(valor) 
-}
-
-console.log(rand2([50, 40]))
-console.log(rand2([992]))
-console.log(rand2([ , 10]))

@@ -95,36 +95,6 @@ console.log(person.isAdmin)
 
 /*
 
-    Array (Vetores) é um agrupamento de dados, uma lista
-
-    [Maycon, 21]
-
-*/
-
-console.log([
-    "Maycon", 
-    21, 
-    true
-])
-
-
-//criando um array
-const animals = [
-    'Lion',
-    'Monkey',
-    'Dog'
-]
-
-//acessar os valores dentro do Array
-console.log(animals[0])
-
-//tamanho do array
-console.log(animals.length)
-
-// ============================================================ //
-
-/*
-
     undefined
         não existe
 
