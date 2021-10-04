@@ -59,42 +59,6 @@ console.log(false) //exemplo com false
 
 /*
 
-    Object é um tipo de dado estrutural, ou seja, cria uma estrutura
-
-    Possui propriedades -> Atributos
-    Possui funcionalidades -> Métodos
-
-    { propriedade: "valor" }
-
-*/
-
-console.log({
-    name: "Maycon",
-    idade: 21,
-    vivo: true,
-    andar: function() {
-        console.log('andar')
-    }
-})
-
-
-//criando um objeto
-const person = {
-    name: "Maycon",
-    age: 21,
-    weight: 75.0,
-    isAdmin: true
-}
-
-console.log(person.name)
-console.log(person.age)
-console.log(person.weight)
-console.log(person.isAdmin)
-
-// ============================================================ //
-
-/*
-
     undefined
         não existe
 

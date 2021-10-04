@@ -101,7 +101,9 @@ function Pessoa() {
 new Pessoa
 
 
-//Função ForEach
+//FUNÇÃO FOREACH
+
+
 //nessa função o indice do array será sempre o segundo parametro, o terceiro parametro é o proprio array e o primeiro parametro é o conteudo do array naquela posicao
 const aprovados = ['Ana', 'Bia', 'Manoel', "Zoo", 'Pedro']
 
@@ -128,7 +130,8 @@ aprovados.forEach2(function(nome, indice) {
 })
 
 
-//Função Map
+//FUNÇÃO MAP
+
 //gera um novo array!
 // a função callback pode receber três parametros: 1)valor atual, 2)indice, 3)o próprio array
 
@@ -158,7 +161,7 @@ const resultado2 = carrinho.map(paraObjeto).map(apenasPreco)
 console.log(resultado2)
 
 
-//Função Filter
+//FUNÇÃO FILTER
 
 const produtos = [
     {nome: 'Notebook', preco: 2499, fragil: true},
@@ -171,7 +174,8 @@ console.log(produtos.filter(function(p) {
     return p.preco > 500 && p.fragil
 }))
 
-//Função Reduce
+//FUNÇÃO REDUCE
+
 //posso passar um valor inicial na função reduce, para ser o primeiro acumulador
 
 const alunos = [
@@ -188,14 +192,14 @@ const resultado = alunos.map(a => a.nota).reduce(function(acumulador, atual) {
 
 console.log(resultado)
 
-//Função concat
+//FUNÇÃO CONCAT
 
 const filhas = ["Maisa", "Joaquina"]
 const filhos = ["João", "Pedro"]
 const todos = filhas.concat(filhos,"Posso passar quantos parametros eu quiser")
 console.log(todos, filhas, filhos)
 
-//Função FlatMap
+//FUNÇÃO FLATMAP
 
 const escola = [
     {
