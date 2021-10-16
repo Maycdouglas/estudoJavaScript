@@ -163,6 +163,23 @@ console.log('a' == 'a')
 //concatenation
 console.log("a" + "a")
 
+//OPERADOR SPREAD
+
+const alunos = [
+    {nome: 'João', nota: 7.3, bolsista: false},
+    {nome: 'Maria', nota: 9.2, bolsista: true},
+    {nome: 'Pedro', nota: 9.8, bolsista: false},
+    {nome: 'Ana', nota: 8.7, bolsista: true},
+]
+
+const nomes = ['João', 'Maria', 'Pedro', 'Ana']
+const novosNomes = ['Maycon', nomes, 'Douglas'] //dessa forma os elementos do vetor nome não são elementos do novosNomes
+const novosNomes2 = ['Maycon', ...nomes, 'Douglas']//dessa forma os elementos do vetor nome são elementos do novosNomes2
+
+console.log(nomes)
+console.log(novosNomes)
+console.log(novosNomes2)
+
 /*
 
     FALSY
