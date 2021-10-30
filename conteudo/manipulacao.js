@@ -22,8 +22,16 @@ console.log(Number('9') + 5) //Type conversion
 
 let string = "123"
 console.log(Number(string))
+let string2 = "123.4"
+console.log(parseFloat(string2))
+console.log(parseInt(string2))
+
+
 let number = 321
-console.log(String(Number))
+console.log(String(number))
+
+let number2 = 321
+console.log(number2.toString())
 
 //Contas quantos caracteres tem uma palavras e quandos dígitos tem um número
 let word = "Paralelepipedo"
