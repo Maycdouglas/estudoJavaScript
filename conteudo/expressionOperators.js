@@ -81,6 +81,8 @@ console.log(2 ** 3)
 //IMPORTANTE
 console.log(increment++) //é diferente em relação ao debaixo
 console.log(++increment)
+//no primeiro, o retorno do increment eh o resultado atual e depois soma, mas nao eh mostrado na tela.
+//no segundo, o retorno do increment eh o resultado final da operacao.
 
 // Operadores de comparação
 
