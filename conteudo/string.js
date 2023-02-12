@@ -103,7 +103,7 @@ console.log(text.replace("Microsoft", "W3Schools"))
     text.search("W3Schools"); //retorna a posicao da string enviada como parametro
     console.log(text.search("W3Schools"))
 
-//splice()
+//slice()
 let text = "Hello world!";
 text.slice(0, 5); //Retorna uma nova string da posicao 0 até a posicao 5
 text.slice(3); //Retorna uma nova string da posicao 3 até o fim
