@@ -31,6 +31,7 @@ console.log(person.name)
 console.log(person.age)
 console.log(person.weight)
 console.log(person.isAdmin)
+console.log(person['name']); //Forma útil de acesso para poder criar algo dinâmico
 
 // ============================================================ //
 
