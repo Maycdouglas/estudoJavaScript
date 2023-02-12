@@ -33,3 +33,11 @@ try {
 } catch(e) {
     console.log(e)
 }
+
+try {
+    sayMyName()
+} catch(e) {
+    console.log(e)
+} finally { //sempre eh executado, independente se teve erro ou nao.
+    console.log("Maycon");
+}
