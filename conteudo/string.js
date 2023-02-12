@@ -18,6 +18,7 @@ console.log(`Exemplo de
 multiplas 
 linhas`)
 console.log(`Exemplo de interpolação: ${1 + 1}`)
+console.log("Exemplo usuando barra invertida \"teste\"")
 
 // ============================================================ //
 
