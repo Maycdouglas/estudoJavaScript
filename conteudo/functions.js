@@ -51,6 +51,18 @@ digaMeuNome(
     }
 )
 
+//Função com muitos argumentos
+function funcao(a,b,c) {
+    let total = 0;
+    for (let argumento of arguments) {
+        total += argumento;
+    }
+
+    console.log(total, a, b, c);
+}
+funcao(1,2,3,4,5,6,7);
+//arguments considera todos os argumentos passados na funcao, mesmo que na declaracao tenha menos argumentos. Não funciona em Arrow Functions.
+
 /*
 
     Function() constructor
