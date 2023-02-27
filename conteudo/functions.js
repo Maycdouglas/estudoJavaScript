@@ -63,6 +63,23 @@ function funcao(a,b,c) {
 funcao(1,2,3,4,5,6,7);
 //arguments considera todos os argumentos passados na funcao, mesmo que na declaracao tenha menos argumentos. Não funciona em Arrow Functions.
 
+//IIFE -> Immediately Invoked Function Expression - Função executada imediatamente
+(function(idade, peso, altura) {
+
+    const sobrenome = 'Miranda';
+    function criaNome(nome) {
+        return nome + ' ' + sobrenome;
+    }
+
+    function falaNome() {
+        console.log(criaNome('Luiz'));
+    }
+
+    falaNome();
+    console.log(idade, peso, altura);
+})(30, 80, 1.80);
+//Esse tipo de função permite que ela seja executada imediatamente no momento que é declarada
+
 /*
 
     Function() constructor
