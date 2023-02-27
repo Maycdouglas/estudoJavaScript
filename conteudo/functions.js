@@ -150,6 +150,16 @@ function Person(name) {
 const maycon = new Person("Maycon")
 console.log(maycon.walk())
 
+//FUNÇÃO RECURSIVA
+function recursiva(max) {
+    if (max >= 10) return;
+    max++;
+    console.log(max);
+    recursiva(max);
+}
+
+recursiva(0);
+
 //FUNÇÃO BIND
 
 const pessoa = {
