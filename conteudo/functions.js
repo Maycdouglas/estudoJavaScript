@@ -132,6 +132,16 @@ console.log(p1.fala());
 */
 
 function Person(name) {
+
+    //Atributos ou métodos privados
+    const ID = 1234; //não consegue acessar fora da função
+
+    //também não consegue acessar fora da função
+    const metodoInterno = function() {
+        return ID + 1;
+    }
+
+    //Atributos ou métodos públicos
     this.name = name
     this.walk = function() {
         return this.name + " está andando"
