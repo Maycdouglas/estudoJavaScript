@@ -80,6 +80,47 @@ funcao(1,2,3,4,5,6,7);
 })(30, 80, 1.80);
 //Esse tipo de função permite que ela seja executada imediatamente no momento que é declarada
 
+//Factory Function - Função Fábrica - Responsável por criar objetos com facilidade
+function criaPessoa(nome, sobrenome, a, p) {
+    return {
+        nome,
+        sobrenome,
+
+        //Getter - transforma esse método em atributo
+        get nomeCompleto() {
+            return `${this.nome} ${this.sobrenome}`
+        },
+
+        //Setter - transforma esse método em atributo
+        set nomeCompleto(valor) {
+            valor = valor.split(' ');
+            this.nome = valor.shift();
+            console.log(valor);
+        },
+
+        fala(assunto = "Falando qualquer coisa") {
+            return `${this.nome} está ${assunto}.`
+        },
+
+        altura: a,
+        peso: p,
+        
+        //Getter
+        get imc() {
+            const indice = this.peso / (this.altura ** 2);
+            return indice.toFixed(2);
+        }
+
+
+    };
+}
+
+const p1 = criaPessoa('Maycon', 'Douglas', 1.8, 80);
+p1.nomeCompleto = 'Maycon Douglas Gomes';
+console.log(p1.nome);
+console.log(p1.sobrenome);
+console.log(p1.fala());
+
 /*
 
     Function() constructor
