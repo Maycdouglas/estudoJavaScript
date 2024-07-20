@@ -84,7 +84,8 @@ console.log(techs.slice(1,3))
 
 // Remover 1 ou mais itens em qualquer posição do Array
 //param1 = posição inicial | param2 = qntd de remoções
-techs.splice(1, 2)
+// altera o array original, mas posso receber os elementos removidos.
+removidos = techs.splice(1, 2)
 
 //Inserir elementos na posição 1 (numero que corresponder ao primeiro parametro) e excluir quantos elementos forem dados no segundo parametro
 //param1 = posição inicial | param2 = qntd de remoções | param* = elementos a serem inseridos
