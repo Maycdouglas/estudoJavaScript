@@ -160,6 +160,49 @@ function recursiva(max) {
 
 recursiva(0);
 
+//FUNÇÃO GERADORA
+function* geradora1() {
+    yield 'Valor 1';
+    yield 'Valor 2';
+    yield 'Valor 3';
+}
+
+// Cada vez que a função for executada, o retorno será o yield seguinte. Se usar um return em algum momento, tudo após ele não é executado.
+
+function* geradora2() {
+    yield 'Valor 1';
+    yield 'Valor 2';
+    return 'Nao executa o ultimo yield'
+    yield 'Valor 3';
+}
+
+const g1 = geradora1();
+console.log(g1) //Retorna Object[Generator] {}
+console.log(g1.next()) //Retorna o Yield com chaves value e done. A chave done representa se a função geradora já chegou ao fim
+console.log(g1.next().value) //Retorna o valor presente no yield
+console.log(g1.next().done) //Retorna true ou false, a depende se já chegou ao fim da geradora
+
+const g2 = geradora2();
+for (let valor of g2) {
+    console.log(valor)
+}
+
+function* geradora3() {
+    yield 0;
+    yield 1;
+    yield 2;
+}
+function* geradora4() {
+    yield* geradora3();
+    yield 3;
+    yield 4;
+}
+
+const g3 = geradora4();
+for(let valor of g3) {
+    console.log(valor)
+}
+
 //FUNÇÃO BIND
 
 const pessoa = {
