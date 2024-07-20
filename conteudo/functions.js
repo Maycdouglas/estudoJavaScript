@@ -296,6 +296,9 @@ console.log(resultado2)
 
 //FUNÇÃO FILTER
 
+// cria um novo array/objeto
+// Retorna sempre um array com a mesma quantidade de elementos ou MENOS
+
 const produtos = [
     {nome: 'Notebook', preco: 2499, fragil: true},
     {nome: 'iPad Pro', preco: 4199, fragil: true},

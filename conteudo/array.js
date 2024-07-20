@@ -144,3 +144,25 @@ novo2.pop()
 console.log('nomes: ',nomes)
 console.log('novo: ',novo)
 console.log('novo2: ',novo2)
+
+//FUNÇÃO FILTER
+
+// cria um novo array/objeto
+// Retorna sempre um array com a mesma quantidade de elementos ou MENOS
+
+const numeros = [5,50,80,1,2,3,5,8,7,11,15,22,17]
+// const multiplosCinco = numeros.filter(function(numero, indice, array){
+//         console.log(numero, indice, array)
+//         return numero % 5 === 0
+// })
+
+// Forma melhor de usar a callback function, usando arrow function
+// const multiplosCinco = numeros.filter((numero) => {
+//     return numero % 5 === 0
+// })
+
+// Forma AINDA melhor de usar a callback function, usando arrow function
+const multiplosCinco = numeros.filter(numero => numero % 5 === 0)
+
+console.log('NUMEROS: ',numeros)
+console.log('MULTIPLOS DE 5: ',multiplosCinco)
