@@ -4,6 +4,8 @@
 
     [Maycon, 21]
 
+    é valor por referência, ou seja, se uma nova constante receber o mesmo array, tudo que fizer nela, altera o outro e vice-versa
+
 */
 
 //Exemplo de Array heterogêneo (ou seja, com elementos de diferentes tipos)
@@ -81,10 +83,19 @@ techs.shift()
 console.log(techs.slice(1,3))
 
 // Remover 1 ou mais itens em qualquer posição do Array
+//param1 = posição inicial | param2 = qntd de remoções
 techs.splice(1, 2)
 
 //Inserir elementos na posição 1 (numero que corresponder ao primeiro parametro) e excluir quantos elementos forem dados no segundo parametro
+//param1 = posição inicial | param2 = qntd de remoções | param* = elementos a serem inseridos
 techs.splice(1, 0, 'Elemento1', 'Elemento 2')
+
+//Recortar array em novo array
+//param1 = posição inicial | param2 = posição final
+// não pega o elemento da posição final, apenas da inicial
+const cortado = techs.slice(1,3)
+console.log(techs)
+console.log(cortado)
 
 // Encontrar a posição de um elemento no Array
 let index = techs.indexOf('html')
@@ -117,3 +128,18 @@ function rand2([min = 0, max = 1000]) {
 console.log(rand2([50, 40]))
 console.log(rand2([992]))
 console.log(rand2([ , 10]))
+
+// COPIANDO ARRAY
+const nomes = ['Eduardo', 'Maria', 'Joana'];
+const novo = nomes; // Dessa forma, tudo que for alterado em um dos arrays reflete no outro.
+const novo2 = [...nomes] //Dessa forma, cria de fato uma cópia, que pode ser alterada sem afetar o original
+
+console.log('nomes: ',nomes)
+console.log('novo: ',novo)
+console.log('novo2: ',novo2)
+nomes.pop()
+novo.pop()
+novo2.pop()
+console.log('nomes: ',nomes)
+console.log('novo: ',novo)
+console.log('novo2: ',novo2)
