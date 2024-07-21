@@ -144,3 +144,27 @@ console.log(produto1.nome)
 produto1.nome = 40
 console.log(produto1.nome)
 // ============================================================ //
+
+// Copiar um objeto
+
+const produto3 = {nome: 'Caneca', preco: 2.3}
+const produto4 = {...produto3} //Aqui copia o objeto em um novo objeto
+produto4.preco = 4.3
+console.log(produto3,produto4)
+
+const produto5 = Object.assign({},produto4) // Outra forma de copiar. 
+//Posso inserir chaves antes no primeiro argumento e chaves depois no terceiro argumento
+produto5.preco = 5
+console.log(produto4, produto5)
+
+//Object.keys()
+console.log(Object.keys(produto5)) //Retorna as keys do objeto
+
+//Object.values()
+console.log(Object.values(produto5)) //Retorna os values do objeto
+
+//Object.entries()
+console.log(Object.entries(produto5)) //Retorna as keys e values do objeto separados em arrays
+
+//Object.getOwnPropertyDescriptor()
+console.log(Object.getOwnPropertyDescriptor(produto5, 'nome')) // Retorna as propriedades de um atributo
