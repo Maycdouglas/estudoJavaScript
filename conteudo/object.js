@@ -75,4 +75,72 @@ const obj = { max: 50, min: 40 }
 console.log(rand(obj))
 console.log(rand({min: 955}))
 
+//Deletar atributo do objeto
+const pessoa1 = new Object() // outra forma de criar um objeto
+pessoa1.nome = 'Luiz'
+pessoa1.sobrenome = 'Otávio'
+
+delete pessoa1.nome;
+console.log(pessoa1)
+
+//Criar método do objeto
+pessoa1.falarNome = () => console.log('Maycon')
+pessoa1.falarNome()
+
+//Impede alterar os valores do objeto
+Object.freeze(pessoa1); //Posso usá-lo dentro da função construtora
+pessoa1.sobrenome = 'Douglas'
+console.log(pessoa1)
+
+//defineProperty e defineProperties
+function Produto(nome, preco, estoque, marca, madeIn){
+    this.preco = preco;
+
+    Object.defineProperty(this, 'nome', {
+        enumerable: true,
+        // value: marca, // não tem necessidade, por ser um Getter
+        //writable: true, // não tem necessidade, por ser um Setter
+        configurable: true,
+        get: () => nome,
+        set: (novoNome) => {
+            if (typeof novoNome !== 'string') {
+                console.log('Nome precisa ser uma String')
+                return
+            }
+            nome = novoNome
+        }
+
+    })
+
+    Object.defineProperty(this,'estoque', {
+        enumerable: true, // exibe a chave se TRUE
+        value: estoque, // valor
+        writable: false, // permite alterar se TRUE
+        configurable: true // permite deletar ou reconfigurar se TRUE
+    });
+
+    Object.defineProperties(this, {
+        marca: {
+            enumerable: true,
+            value: marca,
+            writable: true,
+            configurable: false
+        },
+        madeIn: {
+            enumerable: true,
+            value: madeIn,
+            writable: false,
+            configurable: true
+        }
+    })
+
+}
+
+const produto1 = new Produto('Camiseta',20,3,'Apple','Brazil')
+produto1.estoque = 400
+delete produto1.marca
+delete produto1.madeIn
+console.log(produto1.nome)
+produto1.nome = 40
+console.log(produto1.nome)
 // ============================================================ //
