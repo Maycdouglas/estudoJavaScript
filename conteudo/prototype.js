@@ -65,3 +65,52 @@ const p3 = Object.create(Produto.prototype, {
 
 // HERANÇA
 
+function Produto(nome, preco) {
+    this.nome = nome
+    this.preco = preco
+}
+
+Produto.prototype.aumento = function(quantia) {
+    this.preco += quantia
+}
+
+Produto.prototype.desconto = function(quantia) {
+    this.preco -= quantia
+}
+
+function Camiseta(nome, preco, cor) {
+    this.cor = cor;
+    Produto.call(this, nome, preco) //Faz esse objeto herdar os atributos de Produto
+}
+
+Camiseta.prototype = Object.create(Produto.prototype) //Copia os metodos do proto de Produto para Camiseta
+Camiseta.prototype.constructor = Camiseta; //Altera o Construtor para o objeto Camiseta
+Camiseta.prototype.aumento = function(percentual) { //Sobrescreve o método herdado
+    this.preco = this.preco + (this.preco * (percentual / 100)) 
+}
+
+function Caneca(nome, preco, material, estoque){
+    Produto.call(this, nome, preco);
+    this.material = material
+
+    Object.defineProperty(this, 'estoque', {
+        enumerable: true,
+        configurable: false,
+        get: function() {
+            return estoque;
+        },
+        set: function(valor) {
+            if(typeof valor !== 'number') return;
+            estoque = valor;
+        }
+    });
+}
+
+Caneca.prototype = Object.create(Produto.prototype)
+Caneca.prototype.constructor = Caneca
+
+const camiseta = new Camiseta('Regata', 7.5, 'Preta')
+const caneca = new Caneca('Caneca Avengers', 10, 'Porcelana', 100)
+console.log(camiseta)
+console.log(caneca)
+console.log("Estoque da caneca: ",caneca.estoque)
