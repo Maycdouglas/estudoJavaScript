@@ -165,3 +165,22 @@ let str = "       Hello World!        ";
 str.trim();//Retorna a String sem espaços nas extremidades
 console.log(str) 
 console.log(str.trim()) 
+
+//EXPRESSÃO REGULAR
+
+/* 
+
+/\D+/g
+
+\D representa qualquer caractere que não seja um dígito
+
++ corresponde a uma ou mais ocorrências do caractere ou padrão anterior.
+
+/g é o modificador global, que indica que a pesquisa deve continuar 
+procurando ao longo de toda a string, ao invés de parar na primeira correspondência
+
+*/
+
+const texto = '123abc456def789'
+const resultado = texto.match(/\D+/g)
+console.log(resultado)
