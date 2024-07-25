@@ -326,6 +326,12 @@ const resultado = alunos.map(a => a.nota).reduce(function(acumulador, atual) {
     return acumulador + atual
 })
 
+const numeros = [1,2,3,4,5]
+console.log(numeros.reduce((acumulador,atual,indice,array) => {
+    acumulador = acumulador + atual
+    return acumulador
+},10))
+
 console.log(resultado)
 
 //FUNÇÃO CONCAT
