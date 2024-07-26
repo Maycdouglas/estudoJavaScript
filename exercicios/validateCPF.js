@@ -16,22 +16,35 @@ Se o resultado for maior do que 9, considera 0
 
 */
 
-// ----------- FUNÇÕES -----------
-function multiplicaDigitosCPF(digito,indice,cpfArray){
-    digito = Number(digito)
-    let multiplicador = cpfArray.length - indice + 1
-    digito = digito * multiplicador
-    return digito
+function CadastroPessoaFisica(cpf){
+    Object.defineProperty(this, 'cpfDigits', {
+        //value: cpf.replace(/\D+/g,""),
+        //get: () => this.cpfDigits
+        enumerable: false,
+        get: () => cpf.replace(/\D+/g,"")
+    })
 }
 
-function somaProdutosCPF(acumulador, atual){
-    acumulador = acumulador + atual
-    return acumulador
+CadastroPessoaFisica.prototype.validar = function() {
+    cpfArray = Array.from(this.cpfDigits)
+    newCPFArray = cpfArray.splice(0,9) 
+
+    newCPFArray.push(this.geraDigito(newCPFArray))
+    newCPFArray.push(this.geraDigito(newCPFArray))
+
+    newCPFDigits = newCPFArray.join("")
+
+    if(this.cpfDigits === newCPFDigits)
+    {
+        console.log("CPF VALIDADO COM SUCESSO!")
+    } else {
+        console.log("CPF NÃO VALIDADO!")
+    }   
 }
 
-function geraDigito(cpfArray){
-    digitsMultiplied = cpfArray.map(multiplicaDigitosCPF)
-    sumDigitsMultiplied = digitsMultiplied.reduce(somaProdutosCPF)
+CadastroPessoaFisica.prototype.geraDigito = function(cpfArray) {
+    digitsMultiplied = cpfArray.map(this.multiplicaDigitosCPF)
+    sumDigitsMultiplied = digitsMultiplied.reduce(this.somaProdutosCPF)
     
     digit = 11 - (sumDigitsMultiplied % 11)
     
@@ -40,25 +53,21 @@ function geraDigito(cpfArray){
     
     return digit
 }
-// -------------------------------
 
-
-//posso transformar o cpf em objeto
-
-let cpf = '705.484.450-52'
-let cpfDigits = cpf.replace(/\D+/g,"")
-let cpfArray = Array.from(cpfDigits)
-let newCPFArray = cpfArray.splice(0,9) 
-
-newCPFArray.push(geraDigito(newCPFArray))
-newCPFArray.push(geraDigito(newCPFArray))
-
-let newCPFDigits = newCPFArray.join("")
-
-if(cpfDigits === newCPFDigits)
-{
-    console.log("CPF VALIDADO COM SUCESSO!")
-} else {
-    console.log("CPF NÃO VALIDADO!")
+CadastroPessoaFisica.prototype.multiplicaDigitosCPF = function(digito,indice,cpfArray) {
+    digito = Number(digito)
+    let multiplicador = cpfArray.length - indice + 1
+    digito = digito * multiplicador
+    return digito
 }
+
+CadastroPessoaFisica.prototype.somaProdutosCPF = function(acumulador, atual) {
+    acumulador = acumulador + atual
+    return acumulador
+}
+
+const cpf = new CadastroPessoaFisica("705.484.450-52")
+
+cpf.validar()
+console.log(cpf.cpfDigits)
     
