@@ -114,3 +114,29 @@ const caneca = new Caneca('Caneca Avengers', 10, 'Porcelana', 100)
 console.log(camiseta)
 console.log(caneca)
 console.log("Estoque da caneca: ",caneca.estoque)
+
+
+// PROTOTYPE EM FACTORY FUNCTION
+
+function criaPessoa(nome, sobrenome) {
+
+    const pessoaPrototype = {
+        falar() {
+            console.log(`${this.nome} está falando.`)
+        },
+        comer() {
+            console.log(`${this.nome} está comendo.`)
+        },
+        beber() {
+            console.log(`${this.nome} está bebendo.`)
+        }
+    }
+
+    return Object.create(pessoaPrototype, {
+        nome: {value: nome},
+        sobrenome: {value: sobrenome}
+    })
+}
+
+const pessoa = criaPessoa('maycon', 'douglas')
+console.log(pessoa.nome)
