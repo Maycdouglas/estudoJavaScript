@@ -107,3 +107,16 @@ class Pessoa {
 
 const pessoa1 = new Pessoa('Maycon',10)
 console.log(pessoa1)
+
+// Métodos Estáticos
+
+class Calculadora {
+    //cria método estático, que não precisa de uma instância para ser usado
+    static somar(a,b) {
+        return a + b
+    }
+}
+
+console.log(Calculadora.somar(10,2))
+const calculadora1 = new Calculadora()
+console.log(calculadora1.somar) // métodos estáticos não são acessíveis por instâncias
