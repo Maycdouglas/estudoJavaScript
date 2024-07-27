@@ -62,3 +62,48 @@ class Filho extends Pai {
 
 const filho = new Filho
 console.log(filho)
+
+//Exemplo de classe com propriedades privadas e get/set
+
+// cria propriedades com menos privacidade que o #. Útil para quando precisar evitar colisões
+// de nome em um contexto mais amplo, pois mesmo se dois Symbols tiverem a mesma descrição,
+// eles serão diferentes, veja:
+const symbol1 = Symbol('teste')
+const symbol2 = Symbol('teste')
+console.log(symbol1 === symbol2)
+
+const idadeSymbol = Symbol('idade');
+
+class Pessoa {
+ 
+    //cria propriedades VERDADEIRAMENTE privadas
+    #nome
+
+    constructor(nome,idade){
+        this.#nome = nome
+        this[idadeSymbol] = idade
+    }
+
+    get nome() {
+        return this.#nome
+    }
+
+    set nome(novoNome) {
+        this.#nome = novoNome
+    }
+
+    get idade() {
+        return this[idadeSymbol]
+    }
+
+    set idade(novaIdade) {
+        if(novaIdade < 0) {
+            console.log("Idade não pode ser negativa.")
+        } else {
+            this[idadeSymbol] = novaIdade
+        }
+    }
+}
+
+const pessoa1 = new Pessoa('Maycon',10)
+console.log(pessoa1)
