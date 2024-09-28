@@ -53,6 +53,26 @@ esperaAi2('Conexao com o BD', rand(1,3))
         console.log('ERRO: ', e)
     })
 
+//ASYNC e AWAIT
+async function executar() {
+    try {
+        const fase1 = await esperaAi2('Fase 1', rand(1,3))
+        console.log(fase1)
+
+        const fase2 = await esperaAi2('Fase 2', rand(1,3))
+        console.log(fase2)
+
+        const fase3 = await esperaAi2('Fase 3', rand(1,3))
+        console.log(fase3)
+
+        console.log("Terminamos na fase:", fase3)
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+executar()
+
 //MÉTODO UTEIS DA CLASSE PROMISE
 
 const promises = ['primeiro valor', esperaAi2('Promise 1', 3000), esperaAi2('Promise 1', 500), esperaAi2('Promise 1', 1000), 'outro valor']
