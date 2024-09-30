@@ -184,3 +184,14 @@ procurando ao longo de toda a string, ao invés de parar na primeira correspond�
 const texto = '123abc456def789'
 const resultado = texto.match(/\D+/g)
 console.log(resultado)
+
+
+// CARACTERES DE ESCAPE
+
+console.log("\'") // Insere aspas simples
+console.log("\"") // Insere aspas duplas
+console.log("\\") // Insere barra invertida
+console.log("\n") // Insere nova linha (new line)
+console.log("\r") // Insere ova linha (carriage return)
+console.log("\t") // Insere tabulação
+console.log("\b") // Insere backspace
