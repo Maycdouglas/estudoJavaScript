@@ -235,8 +235,8 @@ let phraseWithUnderscore = myArray.join("_")
 console.log(phraseWithUnderscore)
 
 // Verificar se o texto contém a palavra Amor
-let phrase = "Eu quero viver!"
-console.log(phrase.includes("Amor"))
+let phrase2 = "Eu quero viver!"
+console.log(phrase2.includes("Amor"))
 
 // Transformar uma cadeia de caracteres em elementos de um array
 let word = "manipulação"
