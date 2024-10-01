@@ -4,7 +4,7 @@ Para leitura de arquivo deve-se passá-lo no momento da execução do programa.
 A biblioteca FILE SYSTEM oferece métodos para leitura e escrita de arquivos. 
     - Ela é nativa do NODE
 */
-const fs = require('fs') // Importa a biblioteca File System
+import fs from 'fs' // Importa a biblioteca File System
 
 /*
 - A propriedade abaixo retorna um array com o caminho do NODE e também o caminho do arquivo que está sendo executado
@@ -38,3 +38,17 @@ const caminhoTexto = caminhosArquivos[2]
 fs.readFile(caminhoTexto, 'utf-8', (erro, texto) => {
     console.log(texto)
 })
+
+/* fs.promises.writeFile() 
+    - Função para escrita de arquivo
+    - é uma função assincrona
+    - PARAMETROS:
+        - caminhoParaSalvar - OBRIGATÓRIO
+        - texto - OBRIGATÓRIO
+*/
+const texto = "blablablablablabla bla blablabla blabla"
+const endereco = "./resultados/arquivoEscrito.txt"
+async function escreveArquivo(texto, endereco){
+    await fs.promises.writeFile(endereco, texto)
+}
+escreveArquivo(texto,endereco)
