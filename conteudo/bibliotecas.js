@@ -62,3 +62,16 @@ console.log("Depois do path.resolve(): ",texto)
 console.log("Depois do path.resolve(): ",destino)
 
 
+/*
+    CHALK.JS
+
+    - Biblioteca para...
+    - INSTRUÇÃO:
+        - Executar comando:
+            - npm install chalk
+*/
+
+import chalk from 'chalk'
+
+console.log(chalk.blue('teste azul')) // pinta o texto de azul no terminal
+console.log(chalk.green('teste verde')) // pinta o texto de verde no terminal
