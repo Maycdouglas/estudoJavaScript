@@ -75,3 +75,13 @@ import chalk from 'chalk'
 
 console.log(chalk.blue('teste azul')) // pinta o texto de azul no terminal
 console.log(chalk.green('teste verde')) // pinta o texto de verde no terminal
+
+
+/*
+    NODEMON
+
+    - Biblioteca para fazer com que o servidor levantado seja atualizado durante a execução
+    - INSTRUÇÃO:
+        - adicionar ao package.json na chave "scripts" "nomeScript": "nodemon nomeArquivo.js"
+        - executar 'npm run nomeScript' no terminal
+*/
