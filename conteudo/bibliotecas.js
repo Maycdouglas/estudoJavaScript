@@ -3,7 +3,7 @@
 /*
     COMMANDER.JS
 
-    - Biblioteca para...
+    - Biblioteca para criação de novos scripts para o terminal
     - INSTRUÇÃO:
         - Executar comando:
             - npm install commander
@@ -35,7 +35,7 @@ program
     })
 
 
-program.parse() // necessário ao final
+program.parse() // executa o program
 
 /*
     PATH.JS
