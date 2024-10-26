@@ -7,6 +7,9 @@
     `` -> template literals ou template strings
         - essa última opção permite multíplas linhas e
         também que insira expressões de linguagem (isso se chama interpolação)
+
+    DOCUMENTAÇÃO:
+        - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#instance_methods
 */
 
 console.log("Exemplo com aspas duplas")
