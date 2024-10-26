@@ -103,10 +103,21 @@ class Pessoa {
             this[idadeSymbol] = novaIdade
         }
     }
+
+    //método privado
+    #sussurar(){
+        console.log("Olá")
+    }
+
+    falar(){
+        this.#sussurar()
+    }
+
 }
 
 const pessoa1 = new Pessoa('Maycon',10)
 console.log(pessoa1)
+pessoa1.falar()
 
 // Métodos Estáticos
 
