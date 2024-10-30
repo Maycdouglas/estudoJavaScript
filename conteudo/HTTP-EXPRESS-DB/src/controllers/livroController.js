@@ -19,7 +19,7 @@ class LivroController {
             const autorEncontrado = await autor.findById(novoLivro.autor)
             const livroCompleto = {...novoLivro, autor: {...autorEncontrado._doc}} // é necessario esse _doc pois o autorEncontrado tem outras infos que o banco retorna nele e queremos somente o objeto em si
             const livroCriado = await livro.create(livroCompleto)
-            res.status(201).json({ message: "Criado com sucesso!", livro: novoLivro })
+            res.status(201).json({ message: "Criado com sucesso!", livro: livroCriado })
         } catch (error) {
             res.status(500).json({message: `${error.message} - Falha ao cadastrar livro`})
         }
